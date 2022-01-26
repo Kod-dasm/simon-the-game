@@ -8,16 +8,26 @@
       <span class="loss" v-if="showLoss">You loss</span>
     </h1>
 
-    <div class="container">
-      <button class="container__button container__button--color--green" :class="{activeGreen: aGreen}" @click="intutUserSetTones(1)"></button>
-      <button class="container__button container__button--color--red" :class="{activeRed: aRed}" @click="intutUserSetTones(2)"></button>
-      <button class="container__button container__button--color--blue" :class="{activeBlue: aBlue}" @click="intutUserSetTones(3)"></button>
-      <button class="container__button container__button--color--yellow" :class="{activeYellow: aYellow}" @click="intutUserSetTones(4)"></button>
+    <div class="field">
+      <button class="field__button field__button--color--green" :class="{activeGreen: aGreen}" @click="intutUserSetTones(1)"></button>
+      <button class="field__button field__button--color--red" :class="{activeRed: aRed}" @click="intutUserSetTones(2)"></button>
+      <button class="field__button field__button--color--blue" :class="{activeBlue: aBlue}" @click="intutUserSetTones(3)"></button>
+      <button class="field__button field__button--color--yellow" :class="{activeYellow: aYellow}" @click="intutUserSetTones(4)"></button>
     </div>
-    <button class="button-start-game" @click="starGame">Start</button>
-    <div class="container-round">
-      <label>ROUND:</label>
-      <div class="round">{{ setTones.length }}</div>
+    <div class="container-options">
+      <div class="container-options__option">
+        <button class="button-start-game" @click="starGame">Start</button>
+        <div class="container-round">
+          <label>ROUND:</label>
+          <div class="round">{{ setTones.length }}</div>
+        </div>
+      </div>
+      <div class="container-options__option">
+        <div class="" v-for="level in levelGame" :key="level.nameLevel">
+          <input type="radio" :id="'cv${level.nameLevel}'" :value="level.speed" :checked="level.check" v-model="speed">
+          <label>{{ level.nameLevel }}</label>
+        </div>
+      </div>
     </div>
   </main>
 </body>

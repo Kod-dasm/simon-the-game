@@ -3,13 +3,13 @@ export default {
     return {
       setTones: [],
       userSetTones: [],
-      speed: 500,
+      speed: 1500,
       intervalId: null,
 
-      level: [ 
-        { nameLevel: 'easy', speed: 1500 },
-        { nameLevel: 'normal', speed: 1000 },
-        { nameLevel: 'hard', speed: 400 }
+      levelGame: [ 
+        { nameLevel: 'easy', speed: 1500, check: true },
+        { nameLevel: 'normal', speed: 1000, check: false },
+        { nameLevel: 'hard', speed: 400, check: false }
       ],
 
       showLoss: false,
@@ -22,9 +22,9 @@ export default {
   },
   methods: {
     starGame() {
+      console.log("Speed", this.speed)
       this.newGame()
       this.newRound()
-      console.log("Array Color", this.setTones)
     },
     addTone() {
       this.setTones.push(this.randomTone())
@@ -82,15 +82,16 @@ export default {
       if(!this.playingSetTones && !this.showLoss) {
         this.showTone(tone)
         setTimeout(this.clearActive, 100)
-        this.userSetTones.push(tone)
-        let countUserTones = this.userSetTones.length - 1
-        if(this.userSetTones[countUserTones] != this.setTones[countUserTones]) {
-          this.showLoss = true
+        if(this.setTones.length > 0) {
+          this.userSetTones.push(tone)
+          let countUserTones = this.userSetTones.length - 1
+          if(this.userSetTones[countUserTones] != this.setTones[countUserTones]) {
+            this.showLoss = true
+          }
+          else if(countUserTones + 1 == this.setTones.length) {
+            this.newRound()
+          }
         }
-        else if(countUserTones + 1 == this.setTones.length) {
-          this.newRound()
-        }
-        console.log('My tones', this.userSetTones)
       }
     },
     newGame() {

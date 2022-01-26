@@ -34,7 +34,7 @@ h1:hover {
   justify-content: space-evenly;
   height: 100vh;
 }
-.container {
+.field {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-around;
@@ -45,15 +45,15 @@ h1:hover {
   height: 400px;
   width: 400px;
 }
-.container__button {
+.field__button {
   height: 180px;
   width: 180px;
   border: none;
 }
-.container__button:hover {
+.field__button:hover {
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
 }
-.container__button--color--green {
+.field__button--color--green {
   background-color: green;
   border-top-left-radius: 100%;
   margin-top: 10px;
@@ -62,7 +62,7 @@ h1:hover {
 .activeGreen {
   background-color: rgb(0, 255, 0);
 }
-.container__button--color--red {
+.field__button--color--red {
   background-color: rgb(125, 0, 0);
   border-top-right-radius: 100%;
   margin-top: 10px;
@@ -71,7 +71,7 @@ h1:hover {
 .activeRed {
   background-color: red;
 }
-.container__button--color--blue {
+.field__button--color--blue {
   background-color: rgb(0, 0, 125);
   border-bottom-left-radius: 100%;
   margin-bottom: 10px;
@@ -80,7 +80,7 @@ h1:hover {
 .activeBlue {
   background-color: blue;
 }
-.container__button--color--yellow {
+.field__button--color--yellow {
   background-color: rgb(125, 125, 0);
   border-bottom-right-radius: 100%;
   margin-bottom: 10px;
@@ -88,6 +88,17 @@ h1:hover {
 }
 .activeYellow {
   background-color: yellow;
+}
+.container-options {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+}
+.container-options__option {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 200px;
 }
 .button-start-game {
   border: none;
