@@ -4,17 +4,20 @@
     <audio ref="sound2" src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"></audio>
     <audio ref="sound3" src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3"></audio>
     <audio ref="sound4" src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3"></audio>
-    <h1>Simon the game</h1>
+    <h1>Simon the game <br>
+      <span class="loss" v-if="showLoss">You loss</span>
+    </h1>
+
     <div class="container">
-      <button class="container__button container__button--color--green"></button>
-      <button class="container__button container__button--color--red"></button>
-      <button class="container__button container__button--color--blue"></button>
-      <button class="container__button container__button--color--yellow"></button>
+      <button class="container__button container__button--color--green" :class="{activeGreen: aGreen}" @click="intutUserSetTones(1)"></button>
+      <button class="container__button container__button--color--red" :class="{activeRed: aRed}" @click="intutUserSetTones(2)"></button>
+      <button class="container__button container__button--color--blue" :class="{activeBlue: aBlue}" @click="intutUserSetTones(3)"></button>
+      <button class="container__button container__button--color--yellow" :class="{activeYellow: aYellow}" @click="intutUserSetTones(4)"></button>
     </div>
-    <button class="button-start-game">Start</button>
+    <button class="button-start-game" @click="starGame">Start</button>
     <div class="container-round">
       <label>ROUND:</label>
-      <div class="round">{{ round }}</div>
+      <div class="round">{{ setTones.length }}</div>
     </div>
   </main>
 </body>
