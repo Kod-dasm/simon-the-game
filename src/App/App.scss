@@ -133,3 +133,16 @@ h1:hover {
   font-size: 30px;
   text-align: center;
 }
+.level {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.level__input {
+  height: 18px;
+  width: 18px;
+}
+.level__label {
+  margin-left: 10px;
+}

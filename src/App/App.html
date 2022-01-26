@@ -23,9 +23,9 @@
         </div>
       </div>
       <div class="container-options__option">
-        <div class="" v-for="level in levelGame" :key="level.nameLevel">
-          <input type="radio" :id="'cv${level.nameLevel}'" :value="level.speed" :checked="level.check" v-model="speed">
-          <label>{{ level.nameLevel }}</label>
+        <div class="level" v-for="level in levelGame" :key="level.nameLevel">
+          <input class="level__input" type="radio" :id="'cv${level.nameLevel}'" :value="level.speed" :checked="level.check" v-model="speed">
+          <label class="level__label">{{ level.nameLevel }}</label>
         </div>
       </div>
     </div>
